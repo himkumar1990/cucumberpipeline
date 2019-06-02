@@ -87,6 +87,7 @@
 </dependencies>
 <build>
 <plugins>
+<!--
 <plugin>
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>${maven.surefire.version}</version>
@@ -98,8 +99,8 @@
                 	
                    	<testFailureIgnore>true</testFailureIgnore>
                 </configuration>
-</plugin>
-<!-- <plugin>
+</plugin> -->
+ <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-failsafe-plugin</artifactId>
         <version>3.0.0-M3</version>
@@ -108,7 +109,7 @@
             <suiteXmlFile>{xmlfileName}</suiteXmlFile>
           </suiteXmlFiles>
         </configuration>
-      </plugin> -->
+      </plugin>
 </plugins>
 </build>
 
