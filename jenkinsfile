@@ -6,14 +6,14 @@ pipeline {
 		stage('Compile Stage'){
 			steps{
 				
-					sh 'mvn clean compile'
+					bat 'mvn clean compile'
 				
 			}
 		}
 		stage('Testing Stage'){
 			steps{
 				
-					sh 'mvn test --define xmlfileName=${testXmlFile}'
+					bat 'mvn test --define xmlfileName=${testXmlFile}'
 					cucumber fileIncludePattern: '**/target/cucumber-reports/*.json'
 			}
 		}
