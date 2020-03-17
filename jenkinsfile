@@ -13,9 +13,17 @@ pipeline {
 		}
 		stage('Testing Stage'){
 			steps{
-				
+					try{
 					bat 'mvn install -DxmlfileName=testng.xml'
 					cucumber fileIncludePattern: '**/target/cucumber-reports/*.json'
+					 currentBuild.result = 'SUCCESS'
+					}catch(err){
+						currentBuild.result = 'FAILURE'
+					}finally{
+						mail to: 'himanshu.kumar3112@gmail.com',
+						subject: "Status of pipeline: ${currentBuild.fullDisplayName}",
+						body: "${env.BUILD_URL} has result ${currentBuild.result}"
+					}
 			}
 		}
 	}
