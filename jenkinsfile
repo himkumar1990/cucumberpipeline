@@ -19,6 +19,14 @@ pipeline {
 					cucumber fileIncludePattern: '**/target/cucumber-reports/*.json'
 				}
 		}
+		
+		post{
+			always {
+				mail to: 'himanshu.kumar3112@gmail.com',
+				subject: "Status of pipeline: ${currentBuild.fullDisplayName}",
+				body: "${env.BUILD_URL} has result ${currentBuild.result}"
+			}
+		}
 	}
 			
 		
