@@ -18,7 +18,7 @@ pipeline {
 				steps{
 					bat 'mvn install -DxmlfileName=testng.xml'
 					cucumber fileIncludePattern: '**/target/cucumber-reports/*.json'
-					bat "echo ${env.usr}"
+					echo "${env.usr}"
 				}
 		}
 		
