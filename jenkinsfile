@@ -7,7 +7,7 @@ pipeline {
 			steps{
 				
 					bat 'mvn clean compile'
-					${params.username}
+					bat "echo ${params.username}"
 					bat([script : 'echo compilaion success ...'])
 				
 			}
