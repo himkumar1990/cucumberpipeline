@@ -8,6 +8,8 @@ pipeline {
 				
 					bat 'mvn clean compile'
 					echo "${env.PATH}"
+					echo PATH
+					echo env.PATH
 					bat([script : 'echo compilaion success ...'])
 
 				
