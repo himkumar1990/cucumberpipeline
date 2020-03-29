@@ -11,6 +11,12 @@ pipeline {
 					echo PATH
 					echo env.PATH
 					bat([script : 'echo compilaion success ...'])
+					
+					environment{
+						USER = "Jenkins2"
+					}
+					
+					echo "eNVironment" + env.USER
 
 				
 			}
