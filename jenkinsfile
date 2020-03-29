@@ -9,7 +9,7 @@ pipeline {
 					bat 'mvn clean compile'
 					env usr = ${params.username}
 					bat([script : 'echo compilaion success ...'])
-					"echo ${env.PATH}"
+					echo "${env.PATH}"
 				
 			}
 		}
