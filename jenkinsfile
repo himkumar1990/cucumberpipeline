@@ -7,7 +7,7 @@ pipeline {
 			steps{
 				
 					bat 'mvn clean compile'
-					env usr = ${params.username}
+					echo "$(env.PATH)"
 					bat([script : 'echo compilaion success ...'])
 
 				
@@ -19,7 +19,7 @@ pipeline {
 				steps{
 					bat 'mvn install -DxmlfileName=testng.xml'
 					cucumber fileIncludePattern: '**/target/cucumber-reports/*.json'
-					echo "${env.usr}"
+					
 				}
 		}
 		
