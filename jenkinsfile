@@ -7,7 +7,7 @@ pipeline {
 			steps{
 				
 					bat 'mvn clean compile'
-					echo "$(env.PATH)"
+					echo "${env.PATH}"
 					bat([script : 'echo compilaion success ...'])
 
 				
