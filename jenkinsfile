@@ -9,7 +9,7 @@ pipeline {
 		stage('Compile Stage'){
 			
 			steps{
-				withEnv(["PATH+MAVEN=${tool maven3}/bin"]){
+				withEnv(["PATH+MAVEN=${tool MAVEN_3}/bin"]){
 				 echo env.PATH
 				}
 					bat 'mvn clean compile'
